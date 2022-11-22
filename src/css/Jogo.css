@@ -32,3 +32,6 @@
     font-weight: 700;
     font-family: 'Noto Sans';
 }
+.escondido{
+    display: none;
+}
