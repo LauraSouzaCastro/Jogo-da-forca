@@ -5,11 +5,11 @@ import Chute from './Chute';
 
 function App() {
   return (
-    <>
+    <div className='container'>
       <Jogo />
       <Letras />
       <Chute />
-    </>
+    </div>
   );
 }
 

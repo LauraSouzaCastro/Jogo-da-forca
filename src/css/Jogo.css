@@ -3,7 +3,8 @@
 .caixaJogo{
     display: flex;
     justify-content: space-between;
-    margin: 50px 40px;
+    width: 934px;
+    margin: 60px;
 }
 .caixaBotaoPalavra{
     display: flex;
