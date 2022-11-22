@@ -12,7 +12,8 @@ export default function Jogo(props) {
         palavra: palavra,
         palavraTentaiva: palavraTentaiva,
         setClassePalavra: setClassePalavra,
-        classePalavra: classePalavra } = props;
+        classePalavra: classePalavra,
+        chutou: chutou } = props;
     function letraEscolhida(p) {
         if (p.letra === letra) {
             palavraTentaiva[p.id] = (p.letra)
@@ -24,18 +25,22 @@ export default function Jogo(props) {
             return <strong key={p.id}> _ </strong>
         }
     }
-    if(quantErros === 6 ){
-        setClassePalavra('vermelho')
-    }else if ( quantAcertos === letras.length){
-        setClassePalavra('verde')
+    function fimDeJogo(){
+        if(quantErros === 6 ){
+            setClassePalavra('vermelho')
+        }else if ( quantAcertos === letras.length){
+            setClassePalavra('verde')
+        }
+        return  <strong className={classePalavra}>{palavra}</strong>
     }
+    
     return (
         <div className='caixaJogo'>
             <img src={imagem} className='forca' alt='' />
             <div className='caixaBotaoPalavra'>
                 <button className='botao' onClick={iniciarJogo} disabled={desabilitada}>Escolher Palavra</button>
                 <span className='palavraJogo'>
-                    { (quantErros === 6 || quantAcertos === letras.length) ?  <strong className={classePalavra}>{palavra}</strong> : arrayPalavra.map((p) => letraEscolhida(p))}
+                    { (quantErros === 6 || quantAcertos === letras.length || chutou === true) ?  fimDeJogo() : arrayPalavra.map((p) => letraEscolhida(p))}
                 </span>
             </div>
         </div>

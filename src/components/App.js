@@ -16,6 +16,7 @@ function App() {
   const [quantAcertos, setQuantAcertos] = useState(0)
   const [palavraTentaiva, setPalavraTentaiva] = useState([])
   const [clicado, setClicado] = useState([])
+  const [chutou, setChutou] = useState(false)
   let arrayPalavra = []
   let letras = []
   function iniciarJogo() {
@@ -29,6 +30,7 @@ function App() {
     setClicado([])
     setPalavraTentaiva([])
     setClassePalavra('preto')
+    setChutou(false)
   }
   if (palavra) {
     for (let i = 0; i < palavra.length; i++) {
@@ -58,6 +60,7 @@ function App() {
         palavra={palavra}
         classePalavra={classePalavra}
         setClassePalavra={setClassePalavra}
+        chutou={chutou}
       />
       <Letras 
         classe={classe} 
@@ -76,7 +79,14 @@ function App() {
         clicado={clicado}
         setClicado={setClicado}
       />
-      <Chute desabilitada={desabilitada} />
+      <Chute 
+        desabilitada={desabilitada}
+        palavra={palavra}
+        setChutou={setChutou}
+        setClassePalavra={setClassePalavra}
+        desabilita={desabilita}
+        setImagem={setImagem}
+      />
     </div>
   );
 }
