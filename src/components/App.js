@@ -9,20 +9,18 @@ function App() {
   const [imagem, setImagem] = useState('./assets/forca0.png')
   const [classe, setClasse] = useState('letra')
   const [desabilitada, setDesabilitada] = useState(true)
-  const [palavra, setPalavra] = useState()
-  const [quantAcertos, setquantAcertos] = useState(0)
+  let [palavra, setPalavra] = useState()
+  const [quantErros, setQuantErros] = useState(0)
+  const [letra, setLetra] = useState(' _ ')
   function iniciarJogo(){
     setClasse('letraHabilitada')
     setPalavra(palavras[Math.floor(Math.random() * palavras.length)])
     setDesabilitada(false)
   }
-  function selecionarLetra(a){
-    console.log("selecionarLetra")
-  }
   return (
     <div className='container'>
-      <Jogo iniciarJogo={iniciarJogo} palavra={palavra} imagem={imagem} desabilitada={!desabilitada}/>
-      <Letras classe={classe} selecionarLetra={selecionarLetra} desabilitada={desabilitada}/>
+      <Jogo iniciarJogo={iniciarJogo} palavra={palavra} imagem={imagem} desabilitada={!desabilitada} letra={letra} setPalavra={setPalavra}/>
+      <Letras classe={classe} setLetra={setLetra} desabilitada={desabilitada} palavra={palavra} setImagem={setImagem} quantErros={quantErros} setQuantErros={setQuantErros}/>
       <Chute  desabilitada={desabilitada}/>
     </div>
   );
