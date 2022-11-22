@@ -23,8 +23,8 @@ export default function Chute(props){
     return(
         <div className='caixaChute'>
             <span className='texto'>Já sei a palavra!</span>
-            <input disabled={desabilitada} className='inputChute'></input>
-            <button disabled={desabilitada} className='botaoChutar' onClick={chutar}>Chutar</button>
+            <input disabled={desabilitada} className='inputChute' data-test="guess-input"></input>
+            <button disabled={desabilitada} className='botaoChutar' onClick={chutar} data-test="guess-button">Chutar</button>
         </div>
     )
 }

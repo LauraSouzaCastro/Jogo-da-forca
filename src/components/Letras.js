@@ -32,9 +32,9 @@ export default function Letras(props) {
     }
     function renderizaLetra(a) {
         if (clicado.find(e => e === a)) {
-            return <button disabled={true} className='letra' key={a} onClick={() => selecionarLetra(a)}>{a}</button>
+            return <button disabled={true} className='letra' key={a} onClick={() => selecionarLetra(a)} data-test="letter">{a}</button>
         } else {
-            return <button disabled={desabilitada} className={classe} key={a} onClick={() => selecionarLetra(a)}>{a}</button>
+            return <button disabled={desabilitada} className={classe} key={a} onClick={() => selecionarLetra(a)} data-test="letter">{a}</button>
         }
 
     }

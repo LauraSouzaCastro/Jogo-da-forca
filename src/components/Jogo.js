@@ -36,10 +36,10 @@ export default function Jogo(props) {
     
     return (
         <div className='caixaJogo'>
-            <img src={imagem} className='forca' alt='' />
+            <img src={imagem} className='forca' alt='' data-test="game-image"/>
             <div className='caixaBotaoPalavra'>
-                <button className='botao' onClick={iniciarJogo} disabled={desabilitada}>Escolher Palavra</button>
-                <span className='palavraJogo'>
+                <button className='botao' onClick={iniciarJogo} disabled={desabilitada} data-test="choose-word">Escolher Palavra</button>
+                <span className='palavraJogo' data-test="word" data-answer={palavra}>
                     { (quantErros === 6 || quantAcertos === letras.length || chutou === true) ?  fimDeJogo() : arrayPalavra.map((p) => letraEscolhida(p))}
                 </span>
             </div>
