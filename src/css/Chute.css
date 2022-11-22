@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.caixaChute{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.texto{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-right: 12px;
+}
+.inputChute{
+    background-color: #FFFFFF;
+    width: 353px;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+.botaoChutar{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #3C76A1;
+    width: 100px;
+    height: 40px;
+    background-color: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    margin-left: 15px;
+}
