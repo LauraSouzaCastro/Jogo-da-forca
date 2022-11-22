@@ -14,7 +14,7 @@ export default function Letras(props) {
         setQuantAcertos: setQuantAcertos,
         desabilita: desabilita,
         clicado: clicado,
-        setClicado: setClicado} = props
+        setClicado: setClicado } = props
     function selecionarLetra(a) {
         setLetra(a)
         clicado.push(a)
@@ -22,18 +22,18 @@ export default function Letras(props) {
         console.log(clicado)
         if (!letras.find(e => e === a) && quantErros < 6) {
             setQuantErros(quantErros + 1)
-            setImagem(`./assets/forca${quantErros+1}.png`)
+            setImagem(`./assets/forca${quantErros + 1}.png`)
         } else {
             setQuantAcertos(quantAcertos + 1)
         }
     }
     if (quantErros === 6 || quantAcertos === letras.length) {
         desabilita()
-      }
+    }
     function renderizaLetra(a) {
         if (clicado.find(e => e === a)) {
-                return <button disabled={true} className='letra' key={a} onClick={() => selecionarLetra(a)}>{a}</button>
-        }else {
+            return <button disabled={true} className='letra' key={a} onClick={() => selecionarLetra(a)}>{a}</button>
+        } else {
             return <button disabled={desabilitada} className={classe} key={a} onClick={() => selecionarLetra(a)}>{a}</button>
         }
 

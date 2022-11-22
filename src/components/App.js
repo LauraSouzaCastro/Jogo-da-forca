@@ -8,6 +8,7 @@ import { useState } from 'react';
 function App() {
   const [imagem, setImagem] = useState('./assets/forca0.png')
   const [classe, setClasse] = useState('letra')
+  const [classePalavra, setClassePalavra] = useState('preto')
   const [desabilitada, setDesabilitada] = useState(true)
   let [palavra, setPalavra] = useState()
   const [quantErros, setQuantErros] = useState(0)
@@ -27,6 +28,7 @@ function App() {
     setQuantErros(0)
     setClicado([])
     setPalavraTentaiva([])
+    setClassePalavra('preto')
   }
   if (palavra) {
     for (let i = 0; i < palavra.length; i++) {
@@ -47,9 +49,15 @@ function App() {
         imagem={imagem} 
         desabilitada={!desabilitada} 
         letra={letra} 
+        letras={letras}
         arrayPalavra={arrayPalavra}
         palavraTentaiva={palavraTentaiva}
         setPalavraTentaiva={setPalavraTentaiva}
+        quantErros={quantErros} 
+        quantAcertos={quantAcertos}
+        palavra={palavra}
+        classePalavra={classePalavra}
+        setClassePalavra={setClassePalavra}
       />
       <Letras 
         classe={classe} 

@@ -1,22 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
-.caixaJogo{
+
+.caixaJogo {
     display: flex;
     justify-content: space-between;
     width: 934px;
     margin: 60px;
 }
-.caixaBotaoPalavra{
+
+.caixaBotaoPalavra {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
 }
-.forca{
+
+.forca {
     width: 400px;
     height: 466.67px;
 }
-.botao{
+
+.botao {
     width: 200px;
     height: 60px;
     background-color: #27AE60;
@@ -27,8 +31,21 @@
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     border: none;
 }
-.palavraJogo{
+
+.palavraJogo {
     font-size: 50px;
     font-weight: 700;
     font-family: 'Noto Sans';
+}
+
+.verde {
+    color: #27AE60;
+}
+
+.vermelho {
+    color: #FF0000;
+}
+
+.preto{
+    color: black;
 }
