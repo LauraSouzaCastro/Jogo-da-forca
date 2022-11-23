@@ -2,7 +2,7 @@ import '../css/Jogo.css';
 export default function Jogo({ iniciarJogo, imagem, letra, letras, arrayPalavra, quantAcertos, quantErros, palavra, palavraTentaiva, classePalavra, chutou}) {
     return (
         <div className='caixaJogo'>
-            <img src={imagem} className='forca' alt='' data-test="game-image" />
+            <img src={imagem} className='forca' data-test="game-image" alt=''/>
             <div className='caixaBotaoPalavra'>
                 <button className='botao' onClick={iniciarJogo} data-test="choose-word">Escolher Palavra</button>
                 <span className='palavraJogo' data-test="word" data-answer={palavra}>

@@ -4,7 +4,6 @@ import Letras from './Letras';
 import Chute from './Chute';
 import palavras from '../palavras';
 import { useEffect, useState } from 'react';
-
 function App() {
   const [imagem, setImagem] = useState('./assets/forca0.png')
   const [classe, setClasse] = useState('letra')
@@ -49,7 +48,6 @@ function App() {
       }
     }
   }, [setClassePalavra, quantErros, quantAcertos, letras.length])
-
   function desabilita() {
     setDesabilitada(true)
     setClasse('letra')
@@ -98,5 +96,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
