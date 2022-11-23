@@ -1,13 +1,5 @@
 import '../css/Chute.css';
-export default function Chute(props){
-    const {
-        palavra: palavra,
-        desabilitada: desabilitada,
-        setChutou: setChutou,
-        setClassePalavra: setClassePalavra,
-        desabilita: desabilita,
-        setImagem: setImagem
-    } = props
+export default function Chute({palavra, desabilitada, setChutou, setClassePalavra, desabilita, setImagem}){
     function chutar(){
         const chute = document.querySelector(".inputChute").value
         if(chute === palavra){
