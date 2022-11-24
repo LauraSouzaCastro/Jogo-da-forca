@@ -9,6 +9,7 @@ function App() {
   const [classePalavra, setClassePalavra] = useState('preto')
   const [desabilitada, setDesabilitada] = useState(true)
   const [palavra, setPalavra] = useState("")
+  const [palavraSemAcento, setPalavraSemAcento] = useState("")
   const [quantErros, setQuantErros] = useState(0)
   const [letra, setLetra] = useState(' _ ')
   const [quantAcertos, setQuantAcertos] = useState(0)
@@ -49,6 +50,8 @@ function App() {
         setClasse={setClasse}
         setDesabilitada={setDesabilitada}
         setClicado={setClicado}
+        palavraSemAcento={palavraSemAcento}
+        setPalavraSemAcento={setPalavraSemAcento}
       />
       <Letras
         classe={classe}
@@ -79,6 +82,7 @@ function App() {
         setImagem={setImagem}
         chute={chute}
         setChute={setChute}
+        palavraSemAcento={palavraSemAcento}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import '../css/Chute.css';
-export default function Chute({palavra, desabilitada, setChutou, setClassePalavra, desabilita, setImagem, chute, setChute}){
+export default function Chute({palavra, desabilitada, setChutou, setClassePalavra, desabilita, setImagem, chute, setChute, palavraSemAcento}){
     function chutar(){
-        if(chute === palavra){
+        if(chute === palavra || chute === palavraSemAcento){
             setClassePalavra('verde')
         }else{
             setClassePalavra('vermelho')
