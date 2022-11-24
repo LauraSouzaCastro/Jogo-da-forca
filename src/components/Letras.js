@@ -3,8 +3,7 @@ export default function Letras({classe, setLetra, desabilitada, letras, setImage
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     function selecionarLetra(a) {
         setLetra(a)
-        clicado.push(a)
-        setClicado(clicado)
+        setClicado([...clicado, a])
         if (!letras.find(e => e === a) && quantErros < 6) {
             setQuantErros(quantErros + 1)
             setImagem(`./assets/forca${quantErros + 1}.png`)

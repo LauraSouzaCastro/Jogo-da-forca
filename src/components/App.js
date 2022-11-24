@@ -34,9 +34,8 @@ function App() {
   if (palavra) {
     for (let i = 0; i < palavra.length; i++) {
       arrayPalavra[i] = { id: i, letra: palavra[i] }
-      letras[i] = palavra[i]
     }
-    letras = [...new Set(letras)];
+    letras = [...new Set(palavra)];
   }
   useEffect(() => {
     if (quantErros === 6 || quantAcertos === letras.length) {
