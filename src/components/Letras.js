@@ -1,5 +1,5 @@
 import '../css/Letra.css';
-export default function Letras({classe, setLetra, desabilitada, letras, setImagem, quantErros, setQuantErros, quantAcertos, setQuantAcertos, clicado, setClicado}) {
+export default function Letras({ classe, desabilita, setLetra, desabilitada, letras, setImagem, quantErros, setQuantErros, quantAcertos, setQuantAcertos, clicado, setClicado, setClassePalavra, setLetras, setArrayPalavra }) {
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     function selecionarLetra(a) {
         setLetra(a)
@@ -7,8 +7,18 @@ export default function Letras({classe, setLetra, desabilitada, letras, setImage
         if (!letras.find(e => e === a) && quantErros < 6) {
             setQuantErros(quantErros + 1)
             setImagem(`./assets/forca${quantErros + 1}.png`)
+            quantErros = quantErros + 1
         } else {
             setQuantAcertos(quantAcertos + 1)
+            quantAcertos = quantAcertos + 1
+        }
+        if (quantErros === 6 || quantAcertos === letras.length) {
+            desabilita()
+            if (quantErros === 6) {
+                setClassePalavra('vermelho')
+            } else if (quantAcertos === letras.length) {
+                setClassePalavra('verde')
+            }
         }
     }
     return (

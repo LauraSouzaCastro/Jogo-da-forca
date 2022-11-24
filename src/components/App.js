@@ -2,51 +2,23 @@ import '../css/App.css';
 import Jogo from './Jogo';
 import Letras from './Letras';
 import Chute from './Chute';
-import palavras from '../palavras';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 function App() {
   const [imagem, setImagem] = useState('./assets/forca0.png')
   const [classe, setClasse] = useState('letra')
   const [classePalavra, setClassePalavra] = useState('preto')
   const [desabilitada, setDesabilitada] = useState(true)
-  const [palavra, setPalavra] = useState()
+  const [palavra, setPalavra] = useState("")
   const [quantErros, setQuantErros] = useState(0)
   const [letra, setLetra] = useState(' _ ')
   const [quantAcertos, setQuantAcertos] = useState(0)
   const [palavraTentaiva, setPalavraTentaiva] = useState([])
   const [clicado, setClicado] = useState([])
   const [chutou, setChutou] = useState(false)
-  let arrayPalavra = []
-  let letras = []
-  function iniciarJogo() {
-    setClasse('letraHabilitada')
-    setPalavra(palavras[Math.floor(Math.random() * palavras.length)])
-    setDesabilitada(false)
-    setImagem('./assets/forca0.png')
-    setLetra(' _ ')
-    setQuantAcertos(0)
-    setQuantErros(0)
-    setClicado([])
-    setPalavraTentaiva([])
-    setClassePalavra('preto')
-    setChutou(false)
-  }
-  if (palavra) {
-    for (let i = 0; i < palavra.length; i++) {
-      arrayPalavra[i] = { id: i, letra: palavra[i] }
-    }
-    letras = [...new Set(palavra)];
-  }
-  useEffect(() => {
-    if (quantErros === 6 || quantAcertos === letras.length) {
-      desabilita()
-      if (quantErros === 6) {
-        setClassePalavra('vermelho')
-      } else if (quantAcertos === letras.length) {
-        setClassePalavra('verde')
-      }
-    }
-  }, [setClassePalavra, quantErros, quantAcertos, letras.length])
+  const [chute, setChute] = useState("")
+  const [arrayPalavra, setArrayPalavra] = useState([])
+  const [letras, setLetras] = useState([])
+
   function desabilita() {
     setDesabilitada(true)
     setClasse('letra')
@@ -54,18 +26,29 @@ function App() {
   return (
     <div className='container'>
       <Jogo
-        iniciarJogo={iniciarJogo}
+        setPalavra={setPalavra}
+        setPalavraTentaiva={setPalavraTentaiva}
+        setClassePalavra={setClassePalavra}
+        setChutou={setChutou}
+        setImagem={setImagem}
         imagem={imagem}
+        setQuantAcertos={setQuantAcertos}
+        setQuantErros={setQuantErros}
         letra={letra}
         letras={letras}
         arrayPalavra={arrayPalavra}
-        palavraTentaiva={palavraTentaiva}
-        quantErros={quantErros}
         quantAcertos={quantAcertos}
+        quantErros={quantErros}
         palavra={palavra}
+        palavraTentaiva={palavraTentaiva}
         classePalavra={classePalavra}
-        setClassePalavra={setClassePalavra}
         chutou={chutou}
+        setLetras={setLetras}
+        setArrayPalavra={setArrayPalavra}
+        setLetra={setLetra}
+        setClasse={setClasse}
+        setDesabilitada={setDesabilitada}
+        setClicado={setClicado}
       />
       <Letras
         classe={classe}
@@ -83,6 +66,9 @@ function App() {
         desabilita={desabilita}
         clicado={clicado}
         setClicado={setClicado}
+        setClassePalavra={setClassePalavra}
+        setLetras={setLetras}
+        setArrayPalavra={setArrayPalavra}
       />
       <Chute
         desabilitada={desabilitada}
@@ -91,6 +77,8 @@ function App() {
         setClassePalavra={setClassePalavra}
         desabilita={desabilita}
         setImagem={setImagem}
+        chute={chute}
+        setChute={setChute}
       />
     </div>
   );
