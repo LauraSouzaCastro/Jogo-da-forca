@@ -1,16 +1,15 @@
 import '../css/Jogo.css';
+import forca0 from '../assets/forca0.png';
 import palavras from '../palavras';
 export default function Jogo({ setPalavra, setPalavraTentaiva, setClassePalavra, setChutou, setImagem, imagem, setQuantAcertos, setQuantErros, letra, letras, arrayPalavra, quantAcertos, quantErros, palavra, palavraTentaiva, classePalavra, chutou, setLetras,  setArrayPalavra, setLetra, setClasse, setDesabilitada, setClicado, palavraSemAcento, setPalavraSemAcento}) {
     function iniciarJogo() {
         const palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)]
         const palavraSorteadaSemAcento = palavraSorteada.normalize('NFD').replace(/\p{Mn}/gu, "");
-        console.log(palavraSorteadaSemAcento)
-        console.log(palavraSorteada)
         setClasse('letraHabilitada')
         setPalavra(palavraSorteada)
         setPalavraSemAcento(palavraSorteadaSemAcento)
         setDesabilitada(false)
-        setImagem('./assets/forca0.png')
+        setImagem(forca0)
         setLetra(' _ ')
         setQuantAcertos(0)
         setQuantErros(0)

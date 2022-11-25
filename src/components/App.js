@@ -3,8 +3,9 @@ import Jogo from './Jogo';
 import Letras from './Letras';
 import Chute from './Chute';
 import { useState } from 'react';
+import forca0 from '../assets/forca0.png';
 function App() {
-  const [imagem, setImagem] = useState('./assets/forca0.png')
+  const [imagem, setImagem] = useState(forca0)
   const [classe, setClasse] = useState('letra')
   const [classePalavra, setClassePalavra] = useState('preto')
   const [desabilitada, setDesabilitada] = useState(true)
